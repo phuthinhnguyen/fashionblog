@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            top: 0;
+            background-color: lightgray;
+        }
+      
+        nav{
+            background-color: black;
+        }
+        nav a{
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        .search{
+            float: right;
+        }
+        nav a:hover{
+            cursor: pointer;
+            background-color: white;
+            color: black;
+        }
+        header{
+            padding: 20px;
+            margin: auto;
+            max-width: 1600px;
+            background-color: white;
+            text-align: center;
+        }
+        .header-content{
+            margin-bottom: 20px;
+        }
+        header h1{
+            font-family:"Oswald";
+            font-size: 48px;
+            line-height: 50px; 
+        }
+        header span{
+            font-family: "Oswald";
+        }
+        header a{
+            text-decoration: none;
+            font-family: "Oswald";
+            color: white;
+            background-color: black;
+            padding: 0 5px;
+        }
+        header a:hover{
+            cursor:text;
+        }
+        .img{
+            position: relative;
+            max-width: 1600px;
+            margin: auto;
+        }
+        .img img{
+            width: 100%;
+            height: auto;
+        }
+        .img-text{
+            position: absolute;
+            top: 50%;
+            left: 2%;
+            transform: translate(0,-50%); 
+            color: white; 
+            font-family: "Oswald";
+        }
+        .img-text h3{
+            font-size: 30px;
+            letter-spacing: 5px;
+            line-height: 5px;
+        }
+        .img-text h1{
+            font-size: 70px;
+        }
+        .img-text a{
+            text-decoration: none;
+            padding: 10px 20px;
+            color: black;
+            background-color: gray;
+            font-size: 20px;
+        }
+        .img-text a:hover{
+            background-color: lightgray;
+        }
+        .container{
+            display: flex;
+            padding: 20px 20px;
+            gap:30px;
+            max-width: 1600px;
+            margin: auto;
+          
+        }
+        @media only screen and (max-width:1000px){
+            .container{
+                flex-direction: column;
+            }
+        }
+        .left{
+            flex: 2;
+        }
+        .right{
+            flex: 1;
+        }
+        .left-item1{
+            font-family:"Oswald" ;
+            padding: 20px;
+            background-color: white;
+            margin-bottom: 40px;
+        }
+        .left-item1 h4{
+            font-weight: lighter;
+            font-size: 25px;
+            line-height: 15px;
+            text-align: center;
+        }
+        .left-item1 h6{
+            font-weight: lighter;
+            font-size: 18px;
+            line-height: 15px;
+            text-align: center;
+        }
+        .left-item1 .time{
+            color: gray;
+            font-weight: lighter;
+        }
+        .left-item1 img{
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .left-item1 p{
+            font-family:"Open Sans" ;
+            text-align: justify;
+            font-size: 15px;
+            line-height: 22px;
+        }
+        .left-item1 span{
+            font-weight: bold;
+            color: black;
+        }
+        .left-item1 a{
+            display: inline-block;
+            padding: 10px 12px;
+            text-decoration: none;
+            border: 1px solid lightgray;
+            
+        }
+        .left-item1-likereply{
+            height: 90px;
+        }
+        .like{
+            color: black;
+            background-color: white;
+            float: left;
+            margin-top: 40px;
+        }
+        .like:hover{
+            background-color: lightgray;
+        }
+        .fa-thumbs-up::after{
+            content: " Like";
+            font-family: "Open Sans";
+            font-weight: bold;
+        }
+        .replies{
+            float: right;
+            display: inline-block;
+            background-color: black;
+            color: white;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        .replies:hover{
+            background-color: lightgray;
+            color: black;
+        }
+        .replies span{
+            margin: 10px;
+            padding: 1px 10px;
+            background-color: white;
+            color: black;
+        }
+        .right-item1{
+            width: 100%;
+            background-color: black;
+            color: white;
+           
+        }
+        .right-item1 img{
+            width: 100%;
+            height: auto;
+        }
+        .right-item1 p{
+            font-family: "Open Sans";
+            font-weight: lighter;
+            margin: 0 20px 10px;
+            padding-bottom: 20px;
+            font-size: 15px;
+            line-height: 22px;
+        }
+        .right-item1 h2{
+            font-family: "Oswald";
+            font-weight: lighter;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        .right-item2{
+            background-color: black;
+            margin-top: 20px;
+        }
+        .right-item2 h2{
+            color: white;
+            padding: 20px;
+            font-family: "Oswald";
+            font-weight: lighter;
+            margin-bottom: 0;
+        }
+        .right-item2-1{
+            background-color: white;
+            padding: 20px 10px;
+            display: block;
+        }
+        .right-item2-1:hover{
+            background-color: lightgray;
+        }
+        .right-item2-1 img{
+            width: 50px;
+            height: 60px;
+            float: left;
+            margin-right: 10px;
+            
+        }
+        .right-item2-1 h3,p{
+            margin: 5px; 
+            font-family: "Open Sans";   
+            font-weight: lighter;
+            font-size: 16px;
+        }
+        hr{
+            margin: 0;
+        }
+        .right-item3{
+            background-color: black;
+            margin-top: 20px;
+        }
+        .right-item3 h2{
+            color: white;
+            padding: 20px;
+            font-family: "Oswald";
+            font-weight: lighter;
+            margin-bottom: 0;
+        }
+        .right-item3 div{
+            text-align: center;
+            background-color:gray ;
+            height: 200px;
+            font-family: "Oswald";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .right-item4{
+            background-color: black;
+            margin-top: 20px;
+        }
+        .right-item4 h2{
+            color: white;
+            padding: 20px;
+            font-family: "Oswald";
+            font-weight: lighter;
+            margin-bottom: 0;
+        }
+        .tag{
+            background-color: white;
+            padding: 15px;
+        }
+        .tag a{
+            display: flex;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 2px 5px;
+            background-color: lightgray;
+            color: black;
+            text-decoration: none;
+            font-family: "Open Sans" ;
+            font-size: 12px;
+        }
+        #fashion{
+            background-color: black;
+            color: white;
+            font-size: 15px;
+            padding: 3px 5px;
+        }
+        .right-item5{
+            background-color: black;
+            margin-top: 20px;
+        }
+        .right-item5 h2{
+            color: white;
+            padding: 20px;
+            font-family: "Oswald";
+            font-weight: lighter;
+            margin-bottom: 0;
+        }
+        .right-item5 .img{
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        .right-item6{
+            background-color: black;
+            margin-top: 20px;
+        }
+        .right-item6 h2{
+            color: white;
+            padding: 20px;
+            font-family: "Oswald";
+            font-weight: lighter;
+            margin-bottom: 0;
+        }
+        .right-item6 .follow{
+            padding: 15px;
+            background-color: white;
+        }
+        .right-item6 a{
+            text-decoration: none;
+            color: black;
+            padding: 5px 2px;
+            display: inline-block;
+            font-size: 25px;
+        }
+        .right-item6 a:hover{
+            color: lightgray;
+        }
+        .right-item7{
+            background-color: black;
+            margin-top: 20px;
+        }
+        .right-item7 h2{
+            color: white;
+            padding: 20px;
+            font-family: "Oswald";
+            font-weight: lighter;
+            margin-bottom: 0;
+        }
+        .subscribe{
+            background-color: white;
+            padding: 10px 20px 20px;
+        }
+        .subscribe p{
+            font-family: "Open Sans";
+            font-size: 15px;
+            padding: 10px 0;
+        }
+        .subscribe input{
+            width: 100%;
+            height: 40px;
+            margin-bottom: 15px;
+            border: 1px solid lightgrey;
+            font-family: "Open Sans";
+            font-size: 15px;
+        }
+        .subscribe button{
+            width: 100%;
+            height: 40px;
+            color: white;
+            background-color: red;
+            opacity: 0.8;
+            border: none;
+            font-family: "Open Sans";
+            font-size: 15px;
+        }
+        .subscribe button:hover{
+            cursor: pointer;
+            background-color: gray;
+            color: black;
+        }
+        #left-item1-footer-1,#left-item1-footer-2,#left-item1-footer-3{
+            clear: both;
+            margin-top: 30px;
+            border-top: 1px solid lightgray; 
+        }
+        .left-item1-footer-item{
+            display: flex;
+            align-items: center; 
+        }
+        #left-item1-footer-1 img,#left-item1-footer-2 img,#left-item1-footer-3 img{
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            display: inline-block;
+            
+        }
+        #left-item1-footer-1 .text,#left-item1-footer-2 .text,#left-item1-footer-3 .text{
+            padding: 10px;
+            display: inline-block;
+            margin-left: 40px;
+        }
+        .text h3{
+            display: inline;
+            line-height:40px;
+        }
+        .text span{
+            color: lightgray;
+            font-family: "Oswald";
+            font-weight: lighter;
+        }
+        footer{
+            background-color: gray;
+            padding: 50px;
+        }
+        footer #totop{
+            display: inline-block;
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            padding: 15px 30px;
+        }
+        #totop:hover{
+            background-color: lightgray;
+            color: black;
+        }
+        footer p{
+            font-family: "Open Sans";
+            margin-top: 20px;
+            display: inline-block;
+            color: white;
+            font-size: 15px;
+        }
+        footer #w3{
+          color: white;
+          font-family: "Open Sans"; 
+          font-size: 15px;  
+        }
+        .menusubscribe{
+            display: block;
+            padding: 20px 60px;
+            background-color: white;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%,0);
+            max-width: 1200px;
+            margin: auto;
+            display: none;
+        }
+        .menusubscribe h2{
+            float: left;
+            font-family: "Oswald";
+            letter-spacing: 8px;
+            font-weight: lighter;
+        }
+        .menusubscribe p{
+            clear: both;
+            font-family: "Open Sans";
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        .menusubscribe a{
+            float: right;
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            padding: 10px 15px;
+        }
+        .menusubscribe a:hover{
+            background-color: gray;
+        }
+        .menusubscribe input{
+            width: 100%;
+            height: 40px;
+            margin-bottom: 15px;
+            border: 1px solid lightgrey;
+            font-family: "Open Sans";
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        .menusubscribe button{
+            width: 100%;
+            height: 40px;
+            color: white;
+            background-color: red;
+            opacity: 0.8;
+            border: none;
+            font-family: "Open Sans";
+            font-size: 15px;
+        }
+        .menusubscribe button:hover{
+            cursor: pointer;
+            background-color: gray;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href=""><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+        <a href=""><i class="fa fa-flickr" aria-hidden="true"></i></a>
+        <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a class="search" href=""><i class="fa fa-search" aria-hidden="true"></i></a>
+       
+    </nav>
+    <header>
+        <div class="header-content" id="header-content">
+            <h1>JANE BLOGLIFE</h1>
+            <span>Welcome to the blog of </span><a href="">Jane's world</a>
+        </div>   
+    </header>
+    <div class="img" id="img">
+        <img src="jane.jpg" alt="">
+        <div class="img-text">
+            <h3>Jane's</h3>
+            <h1>FASHION BLOG</h1>
+            <a href="">SUBSCRIBE</a>
+        </div>
+    </div>
+    <div class="container" id="container">
+        <div class="left">
+            <div class="left-item1">
+                <h4>TITLE HEADING</h4>
+                <h6>Title description, <span class="time"> May 2, 2016</span> </h6>
+                <img src="girl_hat.jpg" alt="">
+                <p><span>More Hats!</span>  I am crazy about hats these days. Some text about this blog entry. Fashion fashion and mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sedtellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                <br>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                <div class="left-item1-likereply">
+                    <a class="like" href=""><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                    <a class="replies" href="javascript:showreplyitem1();">Replies<span>1</span></a>
+                </div>
+                <script>
+                    let indexitem1=0
+                    function showreplyitem1(){
+                        if (indexitem1%2==0){
+                            let a =document.getElementById("left-item1-footer-1");
+                            a.style.display="none";
+                            indexitem1++;
+                        }
+                        else {
+                            let a =document.getElementById("left-item1-footer-1");
+                            a.style.display="block";
+                            indexitem1++;
+                        } 
+                    }
+                </script>
+                <div id="left-item1-footer-1">
+                    <div class="left-item1-footer-item">
+                        <img src="avatar_smoke.jpg" alt="">
+                        <div class="text">
+                            <h3>George &nbsp;</h3><span>May 3, 2015, 6:32 PM</span>
+                            <p>Great blog post! Following</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="left-item1">
+                <h4>TITLE HEADING</h4>
+                <h6>Title description, <span class="time"> April 23, 2016</span> </h6>
+                <img src="man_hat.jpg" alt="">
+                <p><span>Hats!&nbsp;</span>The trend this summer is hats for men!</p>
+                <br>
+                <p>Some text about this blog entry. Fashion fashion and mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sedtellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                <div class="left-item1-likereply">
+                    <a class="like" href=""><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                    <a class="replies" href="javascript:showreplyitem2();">Replies<span>2</span></a>
+                </div> 
+                <script>
+                    let indexitem2=0
+                    function showreplyitem2(){
+                        if (indexitem2%2==0){
+                            let a =document.getElementById("left-item1-footer-2");
+                            a.style.display="none";
+                            indexitem2++;
+                        }
+                        else {
+                            let a =document.getElementById("left-item1-footer-2");
+                            a.style.display="block";
+                            indexitem2++;
+                        } 
+                    }
+                </script>
+                <div id="left-item1-footer-2">
+                    <div class="left-item1-footer-item">
+                        <img src="girl_train.jpg" alt="">
+                        <div class="text">
+                            <h3>Amber &nbsp;</h3><span>April 26, 2015, 10:52 PM</span>
+                            <p>Love your blog page! Simply the best! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="left-item1-footer-item">
+                        <img src="girl.jpg" alt="">
+                        <div class="text">
+                            <h3>Angie &nbsp;</h3><span>April 23, 2015, 9:12 PM</span>
+                            <p>Love hats!!</p>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+            <div class="left-item1">
+                <h4>TITLE HEADING</h4>
+                <h6>Title description, <span class="time"> April 7, 2016</span> </h6>
+                <img src="runway.jpg" alt="">
+                <p><span>Dont miss!&nbsp;</span>The runway in New York City this weekend is gonna be legendary!</p>
+                <br>
+                <p>Some text about this blog entry. Fashion fashion and mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sedtellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                <div class="left-item1-likereply">
+                    <a class="like" href=""><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                    <a class="replies" href="javascript:showreplyitem3();">Replies<span>3</span></a>
+                </div>
+               
+                <script>
+                    let indexitem3=0
+                    function showreplyitem3(){
+                        if (indexitem3%2==0){
+                            let a =document.getElementById("left-item1-footer-3");
+                            a.style.display="none";
+                            indexitem3++;
+                        }
+                        else {
+                            let a =document.getElementById("left-item1-footer-3");
+                            a.style.display="block";
+                            indexitem3++;
+                        } 
+                    }
+                </script>
+                <div id="left-item1-footer-3">
+                    <div class="left-item1-footer-item">
+                        <img src="girl_mountain.jpg" alt="">
+                        <div class="text">
+                            <h3>Jane &nbsp;</h3><span>April 10, 2015, 7:22 PM</span>
+                            <p>That was a great runway show! Thanks for everything.</p>
+                        </div>
+                    </div>
+                    <div class="left-item1-footer-item">
+                        <img src="boy.jpg" alt="">
+                        <div class="text">
+                            <h3>John &nbsp;</h3><span>April 8, 2015, 10:32 PM</span>
+                            <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        </div>
+                    </div>
+                    <div class="left-item1-footer-item">
+                        <img src="girl_hood.jpg" alt="">
+                        <div class="text">
+                            <h3>Anja &nbsp;</h3><span>April 7, 2015, 9:12 PM</span>
+                            <p>Cant wait for the runway to start!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-item1">
+                <img src="avatar_girl2.jpg" alt="">
+                <h2>My Name</h2>
+                <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+            </div>
+            <div class="right-item2">
+                <h2>Popular Posts</h2>
+                <div class="right-item2-1">
+                    <img src="avatar_smoke.jpg" alt="">
+                    <div class="right-item2-1-text">
+                        <h3>Denim</h3>
+                        <p>Sed mattis nunc</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="right-item2-1">
+                    <img src="bandmember.jpg" alt="">
+                    <div class="right-item2-1-text">
+                        <h3>Sweaters</h3>
+                        <p>Praes tinci sed</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="right-item2-1">
+                    <img src="workshop.jpg" alt="">
+                    <div class="right-item2-1-text">
+                        <h3>Workshop</h3>
+                        <p>Ultricies congue</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="right-item2-1">
+                    <img src="avatar_smoke.jpg" alt="">
+                    <div class="right-item2-1-text">
+                        <h3>Trends</h3>
+                        <p>Lorem ipsum dipsum</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-item3">
+                <h2>Advertise</h2>
+                <div>Your AD Here</div>
+            </div>
+            <div class="right-item4">
+                <h2>Tags</h2>
+                <div class="tag">
+                    <a id="fashion" href="">Fashion</a>
+                    <a href="">New York</a>
+                    <a href="">London</a>
+                    <a href="">Hats</a>
+                    <a href="">Norway</a>
+                    <a href="">Sweaters</a>
+                    <a href="">Ideas</a>
+                    <a href="">Deals</a>
+                    <a href="">Accessories</a>
+                    <a href="">News</a>
+                    <a href="">Clothing</a>
+                    <a href="">Shopping</a>
+                    <a href="">Jeans</a>
+                    <a href="">Trends</a>
+                </div>
+            </div>
+            <div class="right-item5">
+                <h2>Inspiration</h2>
+                <div class="img">
+                    <img src="jeans.jpg" alt="">
+                    <img src="avatar_hat.jpg" alt="">
+                    <img src="team1.jpg" alt="">
+                    <img src="team4.jpg" alt="">
+                </div>
+            </div>  
+            <div class="right-item6">
+                <h2>Follow Me</h2>
+                <div class="follow">
+                    <a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-flickr" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+            </div> 
+            <div class="right-item7">
+                <h2>Subscribe</h2>
+                <div class="subscribe">
+                    <p>Enter your e-mail below and get notified on the latest blog posts.</p>
+                    <input type="text" placeholder="Enter e-mail">
+                    <button type="submit" onclick="showsubscribe()">Subscribe</button>
+                </div>
+                <script>
+                    function showsubscribe(){
+                        let a = document.getElementById("menusubscribe");
+                        a.style.display="block";
+                        let b=document.getElementById("nav");
+                        b.style.opacity="0.9";
+                        let c=document.getElementById("header-content");
+                        c.style.opacity="0.6";
+                        let d=document.getElementById("img");
+                        d.style.opacity="0.6";
+                        let e=document.getElementById("container");
+                        e.style.opacity="0.6";
+                        let f=document.getElementById("footer");
+                        f.style.opacity="0.6";
+                    }
+                </script>
+            </div> 
+        </div>
+    </div>
+    <footer id="footer">
+        <a id="totop" href=""><i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp; To the top</a>
+        <br>
+        <p>Powered by</p><a id="w3" href="">w3.css</a>
+    </footer>
+    <div class="menusubscribe" id="menusubscribe">
+        <h2>SUBSCRIBE</h2>
+        <a href="javascript:hidemenusubscribe();"><i class="fa fa-remove" aria-hidden="true"></i></a>
+        <p>Join my mailing list to receive updates on the latest blog posts and other things.</p>
+        <input type="text" placeholder="Enter e-mail">
+        <button type="submit">Subscribe</button>
+        <script>
+            function hidemenusubscribe(){
+                let a = document.getElementById("menusubscribe");
+                a.style.display="none";
+                let b=document.getElementById("nav");
+                b.style.opacity="1";
+                let c=document.getElementById("header-content");
+                c.style.opacity="1";
+                let d=document.getElementById("img");
+                d.style.opacity="1";
+                let e=document.getElementById("container");
+                e.style.opacity="1";
+                let f=document.getElementById("footer");
+                f.style.opacity="1";
+            }
+        </script>
+    </div>
+</body>
+</html>
